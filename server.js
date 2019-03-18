@@ -6,13 +6,18 @@ var mysql = require("mysql");
 var PORT = process.env.PORT || 3000;
 // Create express app instance.
 var app = express();
+
+// Parse application body as JSON
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // MySQL DB Connection Information (remember to change this with our specific credentials)
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
     password: "nenafofo83",
-    database: ""
+    database: "burger_db"
   });
   
   // Initiate MySQL Connection.
