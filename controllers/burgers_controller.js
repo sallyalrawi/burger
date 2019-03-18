@@ -20,6 +20,7 @@ router.get("/", function(req, res) {
 router.get("/api/burgers/list", function(req, res) {
   burger.selectAll(function(data){
     res.json(data);
+    // console.log(data);
   });
   
 });
