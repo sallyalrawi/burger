@@ -22,6 +22,10 @@ router.post("/burgers/create", function(req,res){
     });
 });
 
-
+router.delete("/burgers/delete",function(req,res){
+    burger.deleteOne(req.body.burger_id,function(result){
+        res.redirect("/");
+    })
+})
 
 module.exports = router; 

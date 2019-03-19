@@ -24,7 +24,7 @@ var routes = require("./controllers/burgers_Controller.js");
 app.use(routes);
 
 
-// MySQL DB Connection Information (remember to change this with our specific credentials)
+// MySQL DB Connection Information 
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
