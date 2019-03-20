@@ -22,25 +22,6 @@ app.set("view engine", "handlebars");
 var routes = require("./controllers/burgers_Controller.js");
 
 app.use(routes);
-
-
-// MySQL DB Connection Information 
-var connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "nenafofo83",
-    database: "burger_db"
-  });
-  
-  // Initiate MySQL Connection.
-  connection.connect(function(err) {
-    if (err) {
-      console.error("error connecting: " + err.stack);
-      return;
-    }
-    console.log("connected as id " + connection.threadId);
-  });
   
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
