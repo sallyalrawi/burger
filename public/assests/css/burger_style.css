@@ -1,5 +1,14 @@
 
+body{
+    background-color: rgb(187, 156, 119);
+    align-content:center; 
+}
+.container{
+    text-align: center;
+}
 h1 {
-    text-align-last: center;
-    color: orange;
+    text-align-last:center;
+}
+.text{
+    text-align: center;
 }
