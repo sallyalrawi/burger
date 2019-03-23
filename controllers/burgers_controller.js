@@ -10,14 +10,14 @@ router.get("/", function(req,res){
 })
 
 router.put("/burgers/update", function(req,res){
-    burger.updateOne(req.body.burger_id, function(result){
+    burger.updateOne(req.body.id, req.body, function(result){
         console.log(result);
-        res.redirect("/");
+        res.json(result);
     });
 });
 
 router.post("/burgers/create", function(req,res){
-    burger.insertOne(req.body.burger_name,function(result){
+    burger.insertOne(['burger_name'], [req.body.burger_name], function(result){
         res.redirect("/");
     });
 });

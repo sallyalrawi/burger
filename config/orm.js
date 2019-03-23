@@ -46,12 +46,13 @@ var orm = {
       cb(result);
     });
   },
+  // insertOne('burgers', ['burger_name'], ['Veggie'], cb)
   insertOne: function(table, cols, vals, cb) {
     console.log("**orm js Create test**");
     var queryString = "INSERT INTO " + table;
 
     queryString += " (";
-    queryString += cols.toString();
+    queryString += cols.toString(); // INSERT INTO burgers (burger_name, devoured) 
     queryString += ") ";
     queryString += "VALUES (";
     queryString += printQuestionMarks(vals.length);
@@ -80,7 +81,7 @@ var orm = {
     queryString += " SET ";
     queryString += objToSql(objColVals);
     queryString += " WHERE ";
-    queryString += condition;
+    queryString += condition; // 'id = 1'
 
     console.log(queryString);
     connection.query(queryString, function(err, result) {
